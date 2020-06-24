@@ -71,6 +71,7 @@ const WindowSplitter = ({
   return (
     <Component
       className={classnames('window-splitter', className)}
+      data-testid="window-splitter"
       {...rest}
       onMouseDown={onMouseDown}
       onMouseMove={onMouseMove}
@@ -81,7 +82,7 @@ const WindowSplitter = ({
           value={{
             extraPanelStyle:
               index === 0
-                ? { width: `calc(50% ${widthString}px` }
+                ? { width: `calc(50% ${widthString}px)` }
                 : { flexGrow: 1 },
           }}
         >
@@ -89,7 +90,11 @@ const WindowSplitter = ({
             child
           ) : (
             <>
-              <DividerDiv className="window-splitter__divider" onMouseDown={onDividerMouseDown} />
+              <DividerDiv
+                className="window-splitter__divider"
+                data-testid="window-splitter-divider"
+                onMouseDown={onDividerMouseDown}
+              />
               {child}
             </>
           )}
