@@ -4,5 +4,8 @@
     "browser": true
   },
   "extends": ["airbnb", "prettier"],
-  "plugins": ["react-hooks"]
+  "plugins": ["react-hooks"],
+  "rules": {
+    "react/jsx-props-no-spreading": 0
+  }
 }
